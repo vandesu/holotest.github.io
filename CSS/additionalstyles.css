@@ -1,0 +1,44 @@
+/* Removed margin left and right for div. */
+
+.center {
+	text-align: center;
+}
+
+.title {
+	text-align: center;
+}
+
+.topicsection p {
+	text-align: center;
+}
+
+.topicsectionul { /* To fix error where the bullet stays at the left, and the text is not properly aligned. You can remove it to see the error. */
+	list-style-position: inside;
+	text-align: left;
+	margin-left: 35%;
+	line-height: 1.5em;
+}
+
+.reddishcolor {
+	color: #DC143C;
+	background-color: #F1F1F1;
+	font-family: monospace;
+	font-size: 16px;
+}
+
+.centurygothic {
+	font-family: "century gothic", arial, sans-serif;
+}
+
+.verdana {
+	font-family: verdana, sans-serif;
+	font-size: 15px;
+}
+
+.marginnavbars {
+	margin: 50px 0 0 54px;
+}
+
+.ministrymedium {
+	font-family: ministrymedium, arial, sans-serif;
+}

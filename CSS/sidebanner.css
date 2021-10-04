@@ -1,0 +1,61 @@
+/* Side Banner 0.3 */
+/* Calling this with a version, for the same reason as the banner.css. */
+/* Used navigation bars to easily navigate through the pages, no matter what page you're on, instead of just simple hyperlinks. Will keep improving them how they work. */
+
+/* Updated the way the hover works with hover:not(.current) from the Module. */
+/* Added z-index: 1; to make the sidenav stick on top and not get covered. */
+/* Added transition. */
+
+
+body {
+	margin: 0; /* To remove whitespaces. Also have this in the banner.css, but, also here just in case. */
+}
+
+#sidebanner {	/* Made a side navigation bar (or sidenav/sidebar for short) derived from the navigation bar given in the module. */
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #3C2333;
+	height: 100%; /* Switched out width with height, since, it should be vertical.*/
+	overflow: hidden;
+	width: 25%; /* To specify the width of the sidenav. */
+	position: fixed; /* To stay fixed in position. */
+	left: -21%; /* For the hover function, to set a position where most of it is hidden. */
+	z-index: 1;
+	transition: 0.2s; /* To have a smooth transition when mouse hovers to the navbar. Conflict found: Seems to transitions when page loads, which may or may not look good. */
+}				/* Removed the "float: left," since it needs to be vertical. */
+
+#sidebanner:hover { /* Added a way so that when one hovers to the left the nav bar, it shows up, so that it doesn't cover up much space in the left or cause distraction.*/
+	left: 0; 		/* Would have been better with some animation, I think. But that's for the future, when we delve to more advanced ones, I guess, hopefully. */
+
+}
+
+.sidebannerlist a {
+	display: block;
+	color: #10BFDF;
+	/* Went with "text-align: left" (which is probably the default), insted of center, because some part of the text might stick out. Also looks a bit cleaner, it is in the left afterall. */
+	padding: 8px 16px; /* To make it the space the text is in, a bit larger. */
+	 /* To give some space in the left of the text. */
+	font-family: georgia, "times new roman", serif; 
+	text-decoration: none;
+}
+
+.sidebannerlist .current { /* To specify which one the user is in, for ease-of-use purposes. */
+	background-color: #AC1FC6;
+	color: white;
+}
+  
+.sidebannerlist a:hover { /* For the hover effect, to show effectively what area the cursor is pointing to. */
+	background-color: #226673;
+	color: #3FDDFA;
+}
+
+.sidebannerlist .current:hover {
+	background-color: #AC1FC6;
+	color: white;
+}
+
+.leftmargin { /* To set elements a bit away from the left, so that it isn't covered by the sidenav. */
+	margin-left: 63px;
+}
+

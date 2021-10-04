@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Talents - hololive idol Project</title>
+	<link rel="icon" href="../IMG/holoicon.png">
+	<link rel="stylesheet" href="../CSS/holostyle.css">
+	<script src="../JS/headerscroll.js"></script>
+
+<style>
+	
+	body {
+		box-sizing: border-box;
+	}
+
+	.img01 {
+		width: 100%;
+	}
+
+
+
+	.container .categorylist {
+		list-style-type: none;
+		overflow: hidden;
+		background-color: transparent;
+		width: 100%;
+		z-index: 2;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #CDCDCD;
+	}
+
+	.container {
+		position: absolute;
+		top: 200px;
+
+	}
+	.wrapper {
+		width: 75%;
+		margin: auto;
+	}
+
+	.categories {
+		display: inline; /* To set the list, excluding the logo, to the right. */
+
+
+	}
+
+	.categories a {
+		color: #000;
+		text-align: center;
+		padding: 14px 18px;
+		text-decoration: none;
+		border-bottom: 3px solid transparent;
+	}
+
+	.categories a:hover:not(.active) {
+		color: skyblue;
+	}
+
+	.titlecontainer {
+		margin-top: 100px;
+		font-family: ministrymedium, sans-serif;
+		color: #49C8F0;
+	}
+
+	.title {
+		text-align: center;
+	}
+
+	.test {
+		margin-top: 700px;
+	}
+
+	.talentcontainer {
+		position: absolute;
+		width: 100%;
+		top: 350px;
+		animation-name: fadein;
+		animation-duration: 1.25s;
+		animation-timing-function: ease;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes fadein {
+
+		from { opacity: 0; top: 375px; }
+		to { opacity: 1; top: 350px;}
+		
+	}
+
+	.holotable, .entable, .starstable {
+		width: 65%;
+		text-align: center;
+		margin: auto;
+		border-collapse: collapse;
+	}
+
+	.innktable {
+		width: 15%;
+		margin: auto;
+	}
+
+	.idtable, .starstable2, .chtable {
+		width: 45%;
+		margin: auto;
+		border-collapse: collapse;
+	}
+
+	.holotable th, .innktable th, .idtable th, .entable th, .starstable th, .starstable2 th, .chtable th {
+		background-color: #F2CCCC;
+		padding: 20px;
+	}
+
+	.holotable tr, .innktable tr, .idtable tr, .entable tr, .starstable tr, .starstable2 tr, .chtable tr {
+		color: #3A3A3A;
+	}
+
+	.holotable td, .innktable td, .idtable td, .entable td, .starstable td, .starstable2 td, .chtable td {
+		padding: 10px 15px;
+		width: 15%;
+	}
+
+	.holoprofimg {
+		width: 100%;
+		transition: 0.5s;
+
+	}
+
+	.holoprofimg:hover {
+		transform: scale(1.1, 1.1);
+
+	}
+
+	.holologos {
+		width: 25%;
+		display: block;
+		margin: auto;
+		margin-bottom: 20px;
+	}
+
+	.hololive, .inonaka, .holoid, .holoen, .holostars, .holoch {
+		display: none;
+	}
+
+	.hololive.show, .inonaka.show, .holoid.show, .holoen.show, .holostars.show, .holoch.show {
+		display: block;
+	}
+
+	.title {
+		font-family: ministrymedium, sans-serif;
+	}
+
+	.categories.active a {
+		color: skyblue;
+	}
+
+	h2.center {
+		text-align: center;
+		color: #5488FD;
+	}
+
+	p.center {
+		text-align: center;
+	}
+
+	.retired {
+		font-size: 80%;
+		font-style: italic;
+	}
+
+	.footer {
+		bottom: 0;
+	}
+
+</style>
+</head>
+<body>
+	
+
+
+
+
+
+<ul id="header" class="scrollback">
+	<li class="headerimg" id="imgdiv">
+		<img src="../IMG/hololive_production_logo.webp" style="height: inherit;" id="holologo" onclick="window.location = '../index.html'">
+	</li>
+	<li class="headerlist"><a href="hololive.html" class="headerlinks">About the Company</a></li>
+	<li class="headerlist"><a href="holosongs.html" class="headerlinks">Songs</a></li>
+	<li class="headerlist"><a href="hololivealternative.html" class="headerlinks">hololive Alternative</a></li>
+	<li class="headerlist"><a href="hololivetalents.html" class="headerlinks current">Talents</a></li>
+</ul>
+
+<div class="div01">
+	<div class="wrapper">
+	<div class="container">
+	<ul class="categorylist">
+		<li class="categories active"><a href="javascript:void(0);" onclick="holoall()">All</a></li>
+		<li class="categories"><a href="javascript:void(0);" onclick="hololiveShow()">Hololive</a></li>
+		<li class="categories"><a href="javascript:void(0);" onclick="holostarsShow()">Holostars</a></li>
+		<li class="categories"><a href="javascript:void(0);" onclick="inonakaShow()">INoNaKa MUSIC</a></li>
+		<li class="categories"><a href="javascript:void(0);" onclick="holoidShow()">Hololive Indonesia</a></li>
+		<li class="categories"><a href="javascript:void(0);" onclick="holoenShow()">Hololive English</a></li>
+		<li class="categories"><a href="javascript:void(0);" onclick="holochShow()">Hololive China (Dissolved)</a></li>
+	</ul>
+	</div>
+	</div>
+
+<div class="titlecontainer">
+	
+	<h1 class="title">Talents</h1>
+
+</div>
+
+<div class="talentcontainer">
+	
+	<div class="hololive show">
+
+		<img src="../IMG/Hololive_Logo.png" class="holologos">
+
+		<h2 class="center">Solo Debutants</h2>
+		<p class="center">Also known as <b>hololive 0th gen</b>.</p>
+
+		<table class="holotable">
+			
+			<tr>
+				<th>Tokino Sora</th>
+				<th>Roboco</th>
+				<th>Sakura Miko</th>
+				<th>Hoshimachi Susei</th>
+				<th>AZki</th>
+			</tr>
+			<tr>
+				<td><a href="Talents/Tokino_Sora.html"><img src="../IMG/Tokino_Sora_-_Profile_Picture.jpg" alt="Tokino Sora Profile Image" class="holoprofimg"></a></td>
+				<td><a href="Talents/robocco.html"><img src="../IMG/Roboco_-_Profile_Picture.jpg" alt="Robocci Profile Image" class="holoprofimg"></a></td>
+				<td><a href="Talents/Sakura_Miko.html"><img src="../IMG/Sakura_Miko_-_Profile_Picture.jpg" alt="Sakura Miko Profile Image" class="holoprofimg"></a></td>
+				<td><a href="Talents/Hoshimachi_Susei.html"><img src="../IMG/Hoshimachi_Suisei_-_Profile_Picture.jpg" alt="Hoshimachi Susei Profile Image" class="holoprofimg"></a></td>
+				<td><a href="Talents/AZki.html"><img src="../IMG/AZKi_-_Profile_Picture.jpg" alt="AZki Profile Image" class="holoprofimg"></a></td>
+			</tr>
+
+		</table>
+
+		<h2 class="center">Hololive 1st Gen</h2>
+
+		<table class="holotable">
+			<tr>
+				<th>Yozora Mel</th>
+				<th>Shirakami Fubuki</th>
+				<th>Natsuiro Matsuri</th>
+				<th>Aki Rosenthal</th>
+				<th>Akai Haato</th>
+				<th>Hitomi Chris <br><span class="retired">(retired)</span></th>
+			</tr>
+
+			<tr>
+				
+				<td><a href="Talents/Yozora_Mel.html"><img src="../IMG/Yozora_Mel_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Shirakami_Fubuki.html"><img src="../IMG/Shirakami_Fubuki_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Natsuiro_Matsuri.html"><img src="../IMG/Natsuiro_Matsuri_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Aki_Rosenthal.html"><img src="../IMG/Aki_Rosenthal_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Akai_Haato.html"><img src="../IMG/Akai_Haato_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="javascript:void(0)"><img src="../IMG/Hitomi_Chris_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+		</table>
+
+		<h2 class="center">Hololive 2nd Gen</h2>
+
+		<table class="holotable">
+			
+			<tr>
+
+				<th>Minato Aqua</th>
+				<th>Murasaki Shion</th>
+				<th>Nakiri Ayame</th>
+				<th>Yuzuki Choco</th>
+				<th>Oozora Subaru</th>
+
+			</tr>
+
+			<tr>
+				<td><a href="Talents/Minato_Aqua.html"><img src="../IMG/Minato_Aqua_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Murasaki_Shion.html"><img src="../IMG/Murasaki_Shion_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Nakiri_Ayame.html"><img src="../IMG/Nakiri_Ayame_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Yuzuki_Choco.html"><img src="../IMG/Yuzuki_Choco_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Oozora_Subaru.html"><img src="../IMG/Oozora_Subaru_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+			</tr>
+
+		</table>
+
+		<h2 class="center">Hololive Gamers</h2>
+
+		<table class="holotable">
+			<tr>
+				
+				<th></th>
+				<th>Shirakami Fubuki</th>
+				<th>Ookami Mio</th>
+				<th>Nekomata Okayu</th>
+				<th>Inogami Korone</th>
+
+			</tr>
+			<tr>
+
+				<td><a href="javascript:void(0)"><img src="../IMG/Hololive_Gamers_Logo.png" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Shirakami_Fubuki.html"><img src="../IMG/Shirakami_Fubuki_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Ookami_Mio.html"><img src="../IMG/Ookami_Mio_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Nekomata_Okayu.html"><img src="../IMG/Nekomata_Okayu_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Inugami_Korone.html"><img src="../IMG/Inugami_Korone_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+		</table>
+
+		<h2 class="center">Hololive 3rd Gen</h2>
+		<p class="center">Also known as <b>hololive Fantasy</b> (ホロライブファンタジー).</p>
+
+		<table class="holotable">
+			<tr>
+				
+				<th>Usada Pekora</th>
+				<th>Uruha Rushia</th>	
+				<th>Shiranui Flare</th>
+				<th>Shirogane Noel</th>
+				<th>Houshou Marine</th>
+
+			</tr>
+			<tr>
+				
+				<td><a href="Talents/Usada_Pekora.html"><img src="../IMG/Usada_Pekora_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Uruha_Rushia_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Shiranui_Flare_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Shirogane_Noel_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Houshou_Marine_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+		</table>
+
+		<h2 class="center">Hololive 4th Gen</h2>
+		<p class="center">Also known as <b>holoForce</b> (ホロふぉーす).</p>
+
+		<table class="holotable">
+			
+			<tr>
+				
+				<th>Amane Kanata</th>
+				<th>Kiryu Coco</th>
+				<th>Tsunomaki Watame</th>
+				<th>Tokoyami Towa</th>
+				<th>Himemori Luna</th>
+
+			</tr>
+			<tr>
+				
+				<td><a href=""><img src="../IMG/Amane_Kanata_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Kiryu_Coco_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Tsunomaki_Watame_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Tokoyami_Towa_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Himemori_Luna_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>	
+
+			</tr>
+
+		</table>
+
+		<h2 class="center">Hololive 5th Gen</h2>
+		<p class="center">Formerly known as <b>holoFive</b> (ほろふぁいぶ) before Mano Aloe's retirement, now known as <b>NePoLaBo</b> (ねぽらぼ).</p>
+
+		<table class="holotable">
+			
+			<tr>
+				
+				<th>Yukihana Lamy</th>
+				<th>Momosuzu Nene</th>
+				<th>Shishiro Botan</th>
+				<th>Omaru Polka</th>
+				<th>Mano Aloe <br><span class="retired">(retired)</span></th>
+
+			</tr>
+			<tr>
+				
+				<td><a href="Talents/Yukihana_Lamy.html"><img src="../IMG/Yukihana_Lamy_-_Profile_Picture.png" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Momosuzu_Nene.html"><img src="../IMG/Momosuzu_Nene_-_Profile_Picture.png" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Shishiro_Botan.html"><img src="../IMG/Shishiro_Botan_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="Talents/Omaru_Polka.html"><img src="../IMG/Omaru_Polka_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href="javascript:void(0)"><img src="../IMG/Mano_Aloe_-_Profile_Picture.png" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	<div class="inonaka show">
+
+		<img src="../IMG/INoNaKa_Music_Logo.png" class="holologos">
+		
+		<table class="innktable">
+			<tr>
+				
+				<th>Azki</th>
+
+			</tr>
+
+			<tr>
+				
+				<td><a href="Talents/AZKi.html"><img src="../IMG/AZKi_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+		</table>
+
+		</div>
+
+	<div class="holoid show">
+		
+		<img src="../IMG/Hololive_INDONESIA_logo.svg.png" class="holologos">
+
+		<h2 class="center">Hololive ID 1st Gen</h2>
+
+		<table class="idtable">
+			
+			<tr>
+
+				<th>Ayunda Risu</th>
+				<th>Moona Hoshinova</th>
+				<th>Airani Iofifteen</th>
+
+			</tr>
+
+			<tr>
+				
+				<td><a href=""><img src="../IMG/Ayunda_Risu_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Moona_Hoshinova_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Airani_Iofifteen_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+		</table>
+
+		<h2 class="center">Hololive ID 2nd Gen</h2>
+		<p class="center">Self-styled as <b>holoro</b>, a portmanteau of "hololive" and "loro" (Javanese for "two").</p>
+
+		<table class="idtable">
+			<tr>
+				
+				<th>Kureiji Ollie</th>
+				<th>Anya Melfissa</th>
+				<th>Pavoila Reine</th>
+
+			</tr>
+			<tr>
+				
+				<td><a href=""><img src="../IMG/Kureiji_Ollie_-_Profile_Picture.png" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Anya_Melfissa_-_Profile_Picture.png" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Pavolia_Reine_-_Profile_Picture.png" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+		</table>
+
+
+	</div>
+
+	<div class="holoen show">
+		
+		<img src="../IMG/Hololive_ENGLISH_logo.svg.png" alt="" class="holologos">
+
+		<h2 class="center">Hololive EN 1st Gen</h2>
+		<p class="center">Also known as <b>-Myth-</b> or <b>holoMyth</b>.</p>
+
+		<table class="entable">
+			
+				<tr>
+					
+					<th>Mori Calliope</th>
+					<th>Takanashi Kiara</th>
+					<th>Ninomae Ina'nis</th>
+					<th>Gawr Gura</th>
+					<th>Watson Amelia</th>
+
+				</tr>
+				<tr>
+					
+					<td><a href=""><img src="../IMG/Mori_Calliope_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+					<td><a href=""><img src="../IMG/Takanashi_Kiara_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+					<td><a href=""><img src="../IMG/Ninomae_Inanis_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+					<td><a href=""><img src="../IMG/Gawr_Gura_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+					<td><a href=""><img src="../IMG/Watson_Amelia_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+				</tr>	
+
+		</table>
+
+	</div>
+
+	<div class="holostars show">
+
+		<img src="../IMG/Holostars_Logo.png" alt="" class="holologos">
+
+		<h2 class="center">Holostars 1st Gen</h2>
+		
+		<table class="starstable">
+
+			<tr>
+				
+				<th>Hanasaki Miyabi</th>
+				<th>Kanade Izuru</th>
+				<th>Arurandeisu</th>
+				<th>Rikka</th>
+				<th>Kagami Kira <br><span class="retired">(retired)</span></th>
+				<th>Yakushiji Suzaku <br><span class="retired">(retired)</span></th>
+
+			</tr>
+			<tr>
+			
+				<td><a href=""><img src="../IMG/Hanasaki_Miyabi_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Kanade_Izuru_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Arurandeisu_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Rikka_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Kagami_Kira_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Yakushiji_Suzaku_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+
+		</table>
+
+		<h2 class="center">Holostars 2nd Gen</h2>
+		<p class="center">Also known as <b>SunTempo</b> as of 28 Jun, 2020.</p>
+
+		<table class="starstable2">
+			
+			<tr>
+				
+				<th>Astel Leda</th>
+				<th>Kishido Temma</th>
+				<th>Yukoku Roberu</th>
+
+			</tr>
+			<tr>
+				
+				<td><a href=""><img src="../IMG/Astel_Leda_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Kishido_Temma_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Yukoku_Roberu_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+
+		</table>
+
+		<h2 class="center">Holostars 3rd Gen</h2>
+		<p class="center">Formerly known as <b>TriNero</b> (トライネロ) before Tsukishita Kaoru's retirement, now known as <b>MaFia</b> (魔フィア).</p>
+
+		<table class="starstable2">
+			
+			<tr>
+				
+				<th>Kageyama Shien</th>
+				<th>Aragami Oga</th>
+				<th>Tsukishita Kaoru <br><span class="retired">(retired)</span></th>
+
+			</tr>
+			<tr>
+			
+				<td><a href=""><img src="../IMG/Kageyama_Shien_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Aragami_Oga_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Tsukishita_Kaoru_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	<div class="holoch show">
+		
+		<h1 class="title">hololive China (CN) (Dissolved Branch)</h1>
+		
+		<h2 class="center">Hololive CN 1st Gen</h2>
+
+		<table class="chtable">	
+
+			<tr>
+				
+				<th>Yogiri</th>
+				<th>Civia</th>
+				<th>Spade Echo</th>
+
+			</tr>
+			<tr>
+				
+				<td><a href=""><img src="../IMG/Yogiri_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Civia_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Spade_Echo_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+
+		</table>
+
+		<h2 class="center">Hololive CN 2nd Gen</h2>
+
+		<table class="chtable">
+			
+
+			<tr>
+				
+				<th>Doris</th>
+				<th>Rosalyn</th>
+				<th>Artia</th>
+
+			</tr>
+			<tr>
+				
+				<td><a href=""><img src="../IMG/Doris_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Rosalyn_-_Profile_Picture.jpg" alt="" class="holoprofimg"></a></td>
+				<td><a href=""><img src="../IMG/Artia_-_Portrait.png" alt="" class="holoprofimg"></a></td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	<div class="footer">
+			
+			<p><small>&copy;2016 COVER Corp.<br><i>All content rights to rightful owners.<br>This website is for personal/educational use only.</i></small></p>
+
+	</div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+</div>
+</div>
+
+<script>
+
+var hololive = document.getElementsByClassName('hololive');
+var inonaka = document.getElementsByClassName('inonaka');
+var holoid = document.getElementsByClassName('holoid');
+var holoen = document.getElementsByClassName('holoen');
+var holostars = document.getElementsByClassName('holostars');
+var holoch = document.getElementsByClassName('holoch');
+var categories = document.getElementsByClassName('categories');
+var i;
+
+function holoall() {
+
+	hololive[0].classList.remove('show');
+	inonaka[0].classList.remove('show');
+	holoid[0].classList.remove('show');
+	holoen[0].classList.remove('show');
+	holostars[0].classList.remove('show');
+	holoch[0].classList.remove('show');
+
+	hololive[0].classList.add('show');
+	inonaka[0].classList.add('show');
+	holoid[0].classList.add('show');
+	holoen[0].classList.add('show');
+	holostars[0].classList.add('show');
+	holoch[0].classList.add('show');
+
+	for (var i = 0; i < categories.length; i++) {
+		categories[i].classList.remove("active");
+	}
+
+	categories[0].classList.add('active');
+
+	}
+
+
+function hololiveShow() {
+
+	hololive[0].classList.remove('show');
+	inonaka[0].classList.remove('show');
+	holoid[0].classList.remove('show');
+	holoen[0].classList.remove('show');
+	holostars[0].classList.remove('show');
+	holoch[0].classList.remove('show');
+
+	hololive[0].classList.add('show');
+
+	for (var i = 0; i < categories.length; i++) {
+		categories[i].classList.remove("active");
+	}
+
+	categories[1].classList.add('active');
+
+}
+
+function holostarsShow() {
+
+	hololive[0].classList.remove('show');
+	inonaka[0].classList.remove('show');
+	holoid[0].classList.remove('show');
+	holoen[0].classList.remove('show');
+	holostars[0].classList.remove('show');
+	holoch[0].classList.remove('show');
+
+	holostars[0].classList.add('show');
+
+	for (var i = 0; i < categories.length; i++) {
+		categories[i].classList.remove("active");
+	}
+
+	categories[2].classList.add('active');
+
+}
+
+function inonakaShow() {
+
+	hololive[0].classList.remove('show');
+	inonaka[0].classList.remove('show');
+	holoid[0].classList.remove('show');
+	holoen[0].classList.remove('show');
+	holostars[0].classList.remove('show');
+	holoch[0].classList.remove('show');
+
+	inonaka[0].classList.add('show');
+
+	for (var i = 0; i < categories.length; i++) {
+		categories[i].classList.remove("active");
+	}
+
+	categories[3].classList.add('active');
+
+}
+
+function holoidShow() {
+
+	hololive[0].classList.remove('show');
+	inonaka[0].classList.remove('show');
+	holoid[0].classList.remove('show');
+	holoen[0].classList.remove('show');
+	holostars[0].classList.remove('show');
+	holoch[0].classList.remove('show');
+
+	holoid[0].classList.add('show');
+
+	for (var i = 0; i < categories.length; i++) {
+		categories[i].classList.remove("active");
+	}
+
+	categories[4].classList.add('active');
+
+}
+
+function holoenShow() {
+
+	hololive[0].classList.remove('show');
+	inonaka[0].classList.remove('show');
+	holoid[0].classList.remove('show');
+	holoen[0].classList.remove('show');
+	holostars[0].classList.remove('show');
+	holoch[0].classList.remove('show');
+
+	holoen[0].classList.add('show');
+
+	for (var i = 0; i < categories.length; i++) {
+		categories[i].classList.remove("active");
+	}
+
+	categories[5].classList.add('active');
+
+}
+
+function holochShow() {
+
+	hololive[0].classList.remove('show');
+	inonaka[0].classList.remove('show');
+	holoid[0].classList.remove('show');
+	holoen[0].classList.remove('show');
+	holostars[0].classList.remove('show');
+	holoch[0].classList.remove('show');
+
+	holoch[0].classList.add('show');
+
+	for (var i = 0; i < categories.length; i++) {
+		categories[i].classList.remove("active");
+	}
+
+	categories[6].classList.add('active');
+
+}
+
+</script>
+
+
+</body>
+</html>

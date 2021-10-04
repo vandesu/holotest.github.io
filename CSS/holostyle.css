@@ -1,0 +1,388 @@
+/* Merged all external css files into one, because, it might be more effecient to just have one file. */
+
+
+/* hololive Header - Header Version 1 */
+/* Re-used the navigation bar from the previous lessons again, and slightly improved it. */
+
+/* Used all that I can from what I have learned to achieve and form this version. */
+/* Added and made lots of changes in values and the like. Also revised comments. */
+/* Changed classes and terming, from banner to header. */
+
+body {
+	margin: 0; /* To remove whitespaces. */
+	overflow-x: hidden;
+	background-color: #fff;
+}
+
+@font-face { /* To set a custom font. */
+	font-family: chiq; /* Sets the custom font's family name. */
+	src: url(Fonts/Chiq_Reduced_Regular.ttf); /* Directory of the font file. */
+}
+
+@font-face {
+	font-family: ministrymedium;
+	src: url(Fonts/Ministry W00 Medium.ttf);
+}
+
+@font-face {
+	font-family: "work sans";
+	src: url(Fonts/WorkSans-Regular.ttf);
+}
+
+#header	 {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	top: 0; /* To remove the white space on top, and to also set its position at the topmost of the page. */
+	overflow: hidden;
+	background-color: transparent;
+	position: fixed; /* Fixes the header in place */
+	width: 100%;
+	z-index: 4;
+}
+
+.headerlist {
+	float: right; /* To set the list, excluding the logo, to the right. */
+
+}
+
+.headerlist a {
+	display: block;
+/*	color: #13CCD0;*/
+	color: #000;
+	font-family: "work sans", arial, sans-serif; /* Used the custom font with a fallback system. */
+	text-align: center;
+	padding: 32px 36px;
+	text-decoration: none;
+	border-bottom: 3px solid transparent;
+}
+
+.headerimg img {
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+}
+
+.headerlist .headerlinks.current {
+	color: skyblue;
+}
+
+
+.headerlist .headerlinks:hover:not(.current) {
+	color: skyblue;
+}
+
+#imgdiv {
+	position: fixed;
+	animation-duration: 2000ms;
+	animation-timing-function: steps(60);
+}
+
+
+.headerimg {
+	text-align: left;
+	height: 70px;
+	width: 225px;
+	padding: 5px;
+	z-index: 3;
+}
+
+#holoimg {
+	padding: 10px;
+}
+
+/* For the scroll function */
+
+#header.scroll {
+	border-bottom: 1px solid #A4A4A4;
+	box-shadow: 0 8px 5px 1px rgba(0, 0, 0, 0.15);
+}
+
+#header.scroll .headerlist > .current {
+	border-bottom: 3px solid #1FABC6;
+}
+
+#header.scroll li > a  {
+	animation-name: headerscroll;
+	animation-fill-mode: forwards;
+	animation-duration: 0.6s;
+}
+
+#header.scrollback li > a {
+	animation-name: headerscrollback;
+	animation-fill-mode: forwards;
+	animation-duration: 0.6s;
+}
+
+#header.scroll li > img {
+	animation-name: headerimgscroll;
+	animation-fill-mode: forwards;
+	animation-duration: 0.6s;
+}
+
+#header.scrollback li > img {
+	animation-name: headerimgscrollback;
+	animation-fill-mode: forwards;
+	animation-duration: 0.6s;
+}
+
+.headerlist .headerlinks.scroll {
+	color: #13CCD0;
+}
+
+
+.headerlist .headerlinks.scroll:hover:not(.current) {
+	background-color: skyblue;
+	color: white;
+}
+
+.headerlogo {
+	position: fixed;
+	z-index: 2;
+
+}
+
+@keyframes headerscroll {
+
+from {
+    padding: 32px 36px;
+}
+to {
+    padding: 22px 30px;
+  }
+
+}
+
+@keyframes headerscrollback {
+from {
+    padding: 22px 30px;
+}
+to {
+    padding: 32px 36px;
+  }
+
+}	
+
+
+@keyframes headerimgscroll {
+
+from {
+	height: 100%;
+	width: 100%;
+}
+
+to {
+	height: 80%;
+	width: 80%;
+}
+
+
+}
+
+@keyframes headerimgscrollback {
+from {
+	height: 80%;
+	width: 80%;
+}
+
+to {
+	height: 100%;
+	width: 100%;
+}
+
+
+}
+
+
+/* For the individual Talents Page */
+
+.idol-name {
+	text-align: center;
+}
+
+.profile-container {
+	margin-top: 90px;
+	margin-right: 2.5%;
+	margin-left: 30%;
+	margin-bottom: 27.5%;
+	height: 200px;
+	padding: 10px;
+	text-align: justify;
+}
+
+
+.portrait-container {
+	width: 25%;
+	position: absolute;
+	left: 5%;
+	top: 20%;
+	/*background-color: #F2C1D1;*/
+	background-color: #FFEDED;
+	z-index: 1;
+}
+
+
+.portraitslides {
+	background-color: white;
+}
+
+.portrait {
+	width: 100%;
+	z-index: 2;
+}
+
+.additional-desc {
+	text-align: center;
+	font-style: italic;
+	font-size: 75%;
+	color: #3A3A3ACC;
+}
+
+.introduction-video {
+	display: block;
+	margin: auto;
+}
+
+.description-container {
+	margin: 15% 5%;
+	position: relative;
+}
+
+.description-container.slide1 {
+	animation-name: slide1;
+	animation-fill-mode: forwards;
+	animation-duration: 0.6s;
+}
+
+.description-container.slide2 {
+	animation-name: slide2;
+	animation-fill-mode: forwards;
+	animation-duration: 0.6s;
+}
+
+.description-container.slide3 {
+	animation-name: slide3;
+	animation-fill-mode: forwards;
+	animation-duration: 0.6s;
+}
+
+.more-desc {
+	color: #3A3A3AFF;
+}
+
+.back-btn-container {
+	position: absolute;
+	left: 5%;
+	top: 13%;
+	z-index: 2;
+}
+
+.back-btn {
+	display: block;
+}
+
+.back-btn a {
+	text-decoration: none;
+}
+
+.back-btn a:hover {
+	color: skyblue;
+}
+
+.portraitslide {
+	display: none;
+}
+
+.pointercursor {
+  cursor: pointer;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.slidepreview {
+  opacity: 0.6;
+}
+
+.activeslide, .slidepreview:hover {
+  opacity: 1;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* For the account links of talent pages */
+.account-container {
+  display: flex;
+}
+
+.account-container a {
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  transition: transform 0.4s;
+  align-self: center;
+}
+
+
+.account-container a img {
+	display: block;
+	width: 100%;
+	margin: auto;
+}
+
+.account-container a:hover {
+	transform: scale(1.25);
+}
+
+/* For basic details tables */
+.tbl-desc-container {
+	display: block;
+	margin: auto;
+	width: 60%;
+}
+
+.tbl-desc {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.tbl-desc th {
+	font-size: 200%;
+	background-color: #FCD0D0;
+	padding: 15px 10px
+}
+
+.tbl-desc td {
+	padding: 10px;
+	background-color: #FFF2F2;
+	}
+
+.firstdiv { /* To set the first div below the header.*/
+	margin-top: 50px; /* Conflict found: This also moves the navbar downards. Try setting value to 65px to see the problem. */
+	padding-top: 5px; /* Putting padding-top seems to move only the div down, so, I'll use it for now. */
+}
+
+.div01 {
+	font-family: "work sans", sans-serif;
+	margin-bottom: 5%;
+}
+
+.footer {
+	position: absolute;
+	bottom: 2%;
+	right: 5%;
+	text-align: right;
+}
