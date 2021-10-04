@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>hololive idol Project</title>
+	<link rel="icon" href="IMG/holoicon.png">
+	<link rel="stylesheet" href="CSS/holostyle.css">
+	<script src="JS/headerscroll.js"></script>
+
+	<!-- For the jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+	
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.img01, .img02 {
+		width: 100%;
+		vertical-align: middle;
+	}
+
+/* Slideshow container */
+	.imgcontainer {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		margin: auto;
+		z-index: -1;
+		overflow: hidden;
+	}
+
+	.text-front-container {
+		width: 100%;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		position: absolute;
+		padding-top: 15%;
+		text-align: center;
+		color: white;
+		font-size: 150%;
+		z-index: 1;
+	}
+
+
+
+	.fade {
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 2s;
+		animation-name: fade;
+		animation-duration: 2s;
+	}
+
+	@-webkit-keyframes fade {
+		0% {opacity: .3} 
+		75% {opacity: 1}
+		100% {opacity: .4}
+	}
+
+	@keyframes fade {
+		0% {opacity: .3} 
+		75% {opacity: 1}
+		100% {opacity: .4}
+	}
+
+	.text-container {
+		position: absolute;
+		top: 115%;
+		width: 100%;
+		height: 1000px;
+		z-index: 2;
+	}
+
+	.images {
+		width: 100%;
+	}
+
+	.flex {
+	  display: flex;
+	  padding: 20px;
+	  margin: auto;
+	  width: 80%;
+	}
+
+	.text {
+		padding: 45px 15px;
+		font-size: 100%;
+	}
+
+	.textheaders {
+		color: skyblue;
+		font-weight: bold;
+		font-size: 35px;
+	}
+
+	.texts {
+		font-size: 22px;
+		text-align: justify;
+	}
+
+
+
+	.fadein {
+		opacity: 0;
+	}
+
+	.imgcontainer:after{
+		content:'';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 114.5%;
+		width: 100%;
+		background-color: black;
+		opacity: .6;
+		z-index: 0;
+	}
+
+	.headerlist a {
+		color: white;
+	}
+
+	.linkbtn {
+		display: inline-block;
+		background-color: skyblue;
+		color: white;
+		border-radius: 50px;
+		text-align: center;
+		text-decoration: none;
+		width: 30%;
+		padding: 20px;
+		font-size: 30px;
+	}
+
+	.linkbtn:hover {
+		background-color: #B0DDF0;
+	}
+
+	.accounts {
+		margin-top: 10%;
+		text-align: center;
+	}
+
+	.account-container {
+		width: 50%;
+		margin: auto;
+	}
+
+	.account-container a {
+	  width: 100px;
+	  margin: 10px;
+	  text-align: center;
+	  line-height: 75px;
+	  transition: transform 0.4s;
+	  align-self: center;
+	}
+
+
+	.account-container a img {
+		display: block;
+		width: 100%;
+		margin: auto;
+	}
+
+
+	.imgcontainer {
+		overflow: hidden;
+	}
+
+</style>
+</head>
+<body>
+	
+
+<!-- Sir, di na po abot sa oras kaya di pa po tapos, sana po ay maintindihan ninyo, maraming salamat po. -->
+<!-- Naubos po oras sa iba't ibang gawain po ay. -->
+<!-- Pasensya na po talaga, maraming salamat po uli. -->
+
+
+
+<ul id="header" class="scrollback">
+	<li class="headerimg" id="imgdiv">
+		<img src="IMG/hololive_production_logo.webp" style="height: inherit;" id="holologo">
+	</li>
+	<li class="headerlist"><a href="PAGES/hololive.html" class="headerlinks">About the Company</a></li>
+	<li class="headerlist"><a href="http://holocovers.com/" target="_blank" class="headerlinks">Songs</a></li>
+	<li class="headerlist"><a href="PAGES/hololivealternative.html" class="headerlinks">hololive Alternative</a></li>
+	<li class="headerlist"><a href="PAGES/hololivetalents.html" class="headerlinks">Talents</a></li>
+</ul>
+
+<div class="div01">
+
+	<div class="imgcontainer">
+		
+		<div class="imgslide fade">
+			<img src="IMG/Shiny_Smily_Story.jpg_large" class="img01">
+		</div>
+		<div class="imgslide fade">
+			<img src="IMG/Hololive_500000_Subs_Conmemorative_Pic.png" class="img01">
+		</div>
+		<div class="imgslide fade">
+			<img src="IMG/Hololive_Summer.jpg" class="img01">
+		</div>
+		<div class="imgslide fade">
+			<img src="IMG/Holostars_-_2nd_Anniversary_Promo.jpg" class="img01">
+		</div>
+		<div class="imgslide fade">
+			<img src="IMG/Hololive_Beyond_the_Stage_Banner.jpg" class="img01">
+		</div>	
+
+	</div>
+
+	<div class="text-front-container">
+	
+		<h2>VTuber agency from Japan makes fans go wild, the world over!</h2>
+	
+		<h1>"Hololive Project"</h1>
+		
+	</div>
+
+	<div class="text-container">
+		
+
+		<div class="fadein flex">
+			<div class="images">
+				<img src="IMG/Holo_image-1.webp" alt="holoimg" class="img02">
+			</div>
+			<div class="text">
+			<h1 class="textheaders">About "hololive production</h1>
+			<p class="texts">With over 4.4 million fans on YouTube and over 4 million on Bilibili, we are a popular VTuber agency not only in Japan but also in China.<br>
+			Next stop: the world!</p>
+			<a href="PAGES/hololivetalents.html" class="linkbtn fadein">Talents</a> <a href="PAGES/hololive.html" class="linkbtn fadein">About Us</a>
+			</div>
+		</div>
+
+		<div class="accounts fadein">
+			
+			<h1 class="textheaders">Official Accounts</h1>
+			<p>Our official Twitter account will be used to let you know about special programs, events, merch, and more.</p>
+
+			<p>Our official YouTube and Bilibili channels are regularly updated with short animations and live streams.</p>
+
+			<p>Members-only broadcasts will be shown on our Nico Nico channel.</p>
+
+			<div class="account-container fadein">
+
+			<a href="https://twitter.com/hololive_en" target="_blank"><img src="IMG/Twitter_Logo.webp" alt="Twitter Link"></a>
+			<a href="https://www.youtube.com/channel/UCJFZiqLMntJufDCHc6bQixg" target="_blank"><img src="IMG/Youtube_Logo.webp" alt="Youtube Link"></a>
+			<a href="https://space.bilibili.com/286700005/#/" target="_blank"><img src="IMG/bilibili_Logo.webp" alt="bilibili Link"></a>
+			<a href="https://ch.nicovideo.jp/hololive" target="_blank"><img src="IMG/niconico_Logo.webp" alt="Nico Nico Link"></a>
+			<a href="https://www.reddit.com/r/Hololive/" target="_blank"><img src="IMG/Reddit_Logo.webp" alt="Reddit Link"></a>
+			<a href="https://www.facebook.com/hololivetv/" target="_blank"><img src="IMG/Facebook_Logo.webp" alt="Facebook Link"></a>
+
+			</div>
+
+
+		</div>
+
+		<div class="fadein footer">
+			
+			<p><small>&copy;2016 COVER Corp.<br><i>All content rights to rightful owners.<br>This website is for personal/educational use only.</i></small></p>
+
+		</div>
+
+	</div>
+
+
+
+</div>
+
+<script>
+<!--	
+var slideIndex = 0;
+holoSlides();
+
+function holoSlides() {
+  var i;
+  var slides = document.getElementsByClassName("imgslide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1} 
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(holoSlides, 2000); // Change image every 2 seconds
+}
+//-->
+
+// Used some jquery, tried to convert it into javascript, but, I do not actually know how since I have only started learning it, so I'll just use jquery.
+$(window).on("load",function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    $(".fadein").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+      } else {
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+});
+
+
+</script>
+
+</body>
+</html>
